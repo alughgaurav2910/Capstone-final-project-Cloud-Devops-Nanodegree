@@ -45,13 +45,10 @@ This will create the stack in the following order:
 
 The node group is created in EC2:
 
-![OK Lint](./doc/ec2.png)
-
 ## Jenkins Pipeline
 
 I am using a CI/CD pipeline on a rolling deployment. On each new HTML generated, the docker image is updated, pushed to AWS and the Kubernetes pods are rolled out so they restart with the new image from the repository. There is a load balancer before the exposed 80 TCP ports to avoid having downtime. 
 
-![Jenkins Pipeline](./doc/pipeline_steps.png)
 
 1. Python Req.
 
